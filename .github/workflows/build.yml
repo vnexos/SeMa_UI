@@ -3,8 +3,6 @@ name: Vercel CI/CD with NextJS
 on:
   push:
     branches: [ "master" ]
-  pull_request:
-    types: [opened, synchronize, reopened]
 
 jobs:
   sonarqube:
@@ -21,13 +19,6 @@ jobs:
         uses: SonarSource/sonarqube-scan-action@v5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-      
-  
-  build_and_deploy:
-    needs: sonarqube
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
-    steps:
       - uses: amondnet/vercel-action@v20
         id: vercel-deploy
         with:
