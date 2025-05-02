@@ -1,0 +1,9 @@
+{
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    // For ESLint
+    "source.fixAll.eslint": "always",
+    "source.removeUnusedImports": "always",
+    "source.sortImports": "always"
+  }
+}
