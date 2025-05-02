@@ -9,7 +9,7 @@ const webStorageServer = {
   },
 
   async get(key: string) {
-    const value: string = (await getCookie(key, { path: "/" })) || "";
+    const value: string = (await getCookie(key, { path: "/" })) ?? "";
 
     try {
       return JSON?.parse(value);

@@ -4,7 +4,7 @@ const webLocalStorage = {
   },
 
   get(key: string) {
-    const rawData = localStorage.getItem(key) || "";
+    const rawData = localStorage.getItem(key) ?? "";
     const data = rawData ? JSON.parse(rawData) : null;
 
     return data;
