@@ -9,7 +9,7 @@ const webStorageClient = {
   },
 
   get(key: string) {
-    const value: string = getCookie(key, { path: "/" }) || "";
+    const value: string = getCookie(key, { path: "/" }) ?? "";
 
     try {
       return JSON?.parse(value);

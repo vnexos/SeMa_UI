@@ -87,10 +87,10 @@ function LanguageProvider({ children }: Readonly<LanguageProviderProps>) {
 
         if (!defaultLanguage) return;
 
-        webStorageClient.set(LANGUAGE, defaultLanguage!.code);
+        webStorageClient.set(LANGUAGE, defaultLanguage.code);
 
         const translations = await getTranslationsWithPattern({
-          code: defaultLanguage!.code,
+          code: defaultLanguage.code,
           pattern: "SYSTEM_*",
         }).unwrap();
 
@@ -129,7 +129,7 @@ function LanguageProvider({ children }: Readonly<LanguageProviderProps>) {
         logo={
           <Logo
             innerRef={navbarLogoRef}
-            runAnimation={hideIntro || runAnimation}
+            runAnimation={hideIntro ?? runAnimation}
             theme={theme as any}
           />
         }
