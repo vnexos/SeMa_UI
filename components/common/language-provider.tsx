@@ -23,7 +23,7 @@ interface LanguageProviderProps {
   children: ReactNode;
 }
 
-function LanguageProvider({ children }: LanguageProviderProps) {
+function LanguageProvider({ children }: Readonly<LanguageProviderProps>) {
   const { theme } = useTheme();
   const navbarLogoRef = useRef<HTMLImageElement>(null);
   const introLogoRef = useRef<HTMLImageElement>(null);
@@ -151,12 +151,6 @@ function LanguageProvider({ children }: LanguageProviderProps) {
             </div>
             <div className="min-w-10 h-[100px]">
               <div className={hideText ? "opacity-0" : ""}>
-                {/* {isSuccess || (
-                  <div className="flex gap-5 mx-auto w-fit mt-10">
-                    <Spinner />
-                    <p className="self-center">Đang tải...</p>
-                  </div>
-                )} */}
                 <h1
                   className={clsx(
                     `text-5xl transition-all duration-500 delay-[600ms] ease-in-out font-space-crusaders ${

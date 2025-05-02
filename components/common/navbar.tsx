@@ -22,10 +22,10 @@ import { useTranslation } from "@/hooks/useTranslation";
 export const Navbar = ({
   logo,
   className,
-}: {
+}: Readonly<{
   logo: React.ReactNode;
   className: string;
-}) => {
+}>) => {
   const { t, isLoaded } = useTranslation();
 
   if (!isLoaded) return null;

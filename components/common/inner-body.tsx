@@ -13,7 +13,7 @@ interface InnerBodyProps {
   hideIntro: boolean;
 }
 
-function InnerBody({ children, logo, hideIntro }: InnerBodyProps) {
+function InnerBody({ children, logo, hideIntro }: Readonly<InnerBodyProps>) {
   const { isLoaded } = useTranslation();
 
   const loadedChildren = useMemo(

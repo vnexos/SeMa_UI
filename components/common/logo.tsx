@@ -5,14 +5,14 @@ function Logo({
   runAnimation,
   size = 40,
   innerRef,
-}: {
+}: Readonly<{
   theme?: "dark" | "light";
   runAnimation: boolean;
   width?: string;
   height?: string;
   size?: number;
   innerRef?: any;
-}) {
+}>) {
   const glowClass = runAnimation ? `glow-logo-${theme}` : "";
 
   return (

@@ -43,7 +43,7 @@ export function useTranslation() {
   const translations = useSelector(
     (state: RootState) => state.language.translations,
   );
-  var language: string = webStorageClient.get(LANGUAGE);
+  let language: string = webStorageClient.get(LANGUAGE);
 
   const { currentLanguage } = useGetLanguageByCodeQuery(language, {
     skip: !language,
@@ -68,7 +68,7 @@ export function useTranslation() {
   const isLoaded = Object.keys(translations).length > 0;
 
   function t(key: string): string {
-    return translations[key] || key; // Fallback to key if not found
+    return translations[key] ?? key; // Fallback to key if not found
   }
 
   return { t, isLoaded, currentLanguage };
