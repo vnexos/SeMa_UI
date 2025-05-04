@@ -23,17 +23,17 @@ function InnerBody({ children, logo, hideIntro }: Readonly<InnerBodyProps>) {
 
   return (
     <>
+      <div className="pt-20">{loadedChildren}</div>
       {/* Pre-render Navbar */}
       <div className="w-full h-fit fixed top-0 left-0">
         <Navbar
           className={clsx(
-            "transition-all duration-150",
+            "transition-all duration-150 z-50",
             hideIntro ? "opacity-100" : "opacity-0",
           )}
           logo={logo}
         />
       </div>
-      <div className="pt-20">{loadedChildren}</div>
     </>
   );
 }
